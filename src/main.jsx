@@ -8,6 +8,7 @@ import './index.css'
 import Main from './Main/Main.jsx';
 import Home from './Pages/Home/Home.jsx';
 import WishList from './Pages/WishList/WishList.jsx';
+import ViewBook from './Pages/ViewBook/ViewBook.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
       {
         path: "/wishList",
         element: <WishList></WishList>
-      }
+      },
+      {
+        path: "/viewBook/:id",
+        element: <ViewBook></ViewBook>
+      },
     ]
   },
 ]);

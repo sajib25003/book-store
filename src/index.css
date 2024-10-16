@@ -1,8 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-.layout {
+h1, h2, h3, h4, h5, h6, p {
   font-family: "Roboto", sans-serif;
+  margin: 5px;
 }
+
+#homePage{
+  font-size: 1.2rem;
+}
+
+.spinner-container{
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  font-size: 30px;
+}
+
 #navbar {
   font-family: "Roboto", sans-serif;
   background-color: black;
@@ -10,7 +24,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 0 30px;
+  padding: 10px 30px;
 }
 
 .title{
@@ -69,6 +83,9 @@
   background-color: #F4F6FF;
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .book-card:hover {
@@ -81,9 +98,44 @@
   justify-content: center;
 }
 
+.book-card h3{
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 5% 0;
+}
+
 .book-cover{
   height: 350px;
   width: 50%;
   border-radius: 16px;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.genre{
+  line-height: 2;
+}
+.card-body{
+  margin: 2% 0;
+  flex-grow: 1;
+}
+.button-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.button{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.button:hover{
+  transform: scale(1.1);
+  opacity: 60%;
 }
