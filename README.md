@@ -23,7 +23,7 @@ To get started with the Book Store project:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/book-store.git
+   git clone https://github.com/sajib25003/book-store
    cd book-store
 2. Install Dependencies
     ```bash
