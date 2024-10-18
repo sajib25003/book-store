@@ -1,19 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body {
   font-family: "Roboto", sans-serif;
   margin: 5px;
 }
 
-#homePage{
+#homePage {
   font-size: 1.2rem;
 }
 
-.spinner-container{
-  margin-top: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: start;
+.spinner-container {
+  position: relative;
+  padding: 10% 35%;
+  display: inline-flex;
+  justify-content: start;
+  align-items: center;
   font-size: 30px;
 }
 
@@ -27,7 +35,7 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 10px 30px;
 }
 
-.title{
+.title {
   flex-basis: 30%;
   font-size: 24px;
   display: flex;
@@ -35,12 +43,12 @@ h1, h2, h3, h4, h5, h6, p {
   gap: 10px;
 }
 
-.title-icon{
+.title-icon {
   font-size: 36px;
   margin-left: 10%;
 }
 
-.nav-item-container{
+.nav-item-container {
   flex-basis: 70%;
   display: flex;
   justify-content: start;
@@ -48,7 +56,6 @@ h1, h2, h3, h4, h5, h6, p {
   gap: 50px;
   margin-left: 25%;
 }
-
 
 .nav-item {
   font-family: "Roboto", sans-serif;
@@ -68,20 +75,45 @@ h1, h2, h3, h4, h5, h6, p {
   border-radius: 16px;
   color: black;
 }
+#banner-container {
+  margin: 2% 10%;
+  border-radius: 16px;
+  height: 600px;
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+#banner-container img {
+  height: 600px;
+  width: 100%;
+  border-radius: 16px;
+}
+#banner-text {
+  position: absolute;
+  bottom: 40%;
+  right: 10%;
+  color: white;
+}
+#banner-text h2 {
+  font-size: 4rem;
+}
+
+#banner-text h4 {
+  font-size: 2rem;
+}
 
 .book-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
-  margin: 2% 10%;
+  margin: 0 10%;
 }
 
 .book-card {
   border: 1px solid gray;
   border-radius: 16px;
   padding: 20px;
-  background-color: #F4F6FF;
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5); 
+  background-color: #f4f6ff;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -89,53 +121,372 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .book-card:hover {
-  transform: translateY(-4px); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); 
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
 
-.image-container{
+.image-container {
   display: flex;
   justify-content: center;
 }
 
-.book-card h3{
+.book-card h3 {
   text-align: center;
   font-size: 1.5rem;
   margin: 5% 0;
 }
 
-.book-cover{
+.book-cover {
   height: 350px;
   width: 50%;
   border-radius: 16px;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.genre{
+.genre {
   line-height: 2;
 }
-.card-body{
+.card-body {
   margin: 2% 0;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
 }
-.button-container{
+.button-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.button{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.button {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background-color: #000;
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 16px;
+  border-radius: 10px;
   text-decoration: none;
+  font-size: 1.1rem;
 }
 
-.button:hover{
+.button:hover {
   transform: scale(1.1);
   opacity: 60%;
+}
+
+#pageTitle {
+  font-size: 3rem;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 2%;
+}
+
+/* wishlist Table related style */
+#tblContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  /* width: 100%; */
+  overflow-x: auto;
+  padding: 20px;
+  min-height: 80vh;
+}
+
+.home-div {
+  min-height: 80vh;
+}
+
+#tbl {
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 100%;
+  border: 1px solid #ddd;
+  margin: 0 auto;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* seach field css */
+.searchField {
+  margin-bottom: 1%;
+  width: 80%;
+  display: flex;
+  justify-content: end;
+}
+
+.searchField input,
+.rowsPerPage {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+/* pagination css */
+.pagination {
+  width: 80%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.page-btn {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+.page-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.page-info {
+  margin: 0 10px;
+}
+
+.searchAndPaginationSort {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.paginationSort {
+  display: flex;
+  flex-basis: 50%;
+  align-items: center;
+  gap: 2%;
+}
+
+.rowsPerPage {
+  padding: 1%;
+  width: 10%;
+}
+
+.pagination-container-home,
+.searchAndSort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2% 10%;
+  font-size: 1.2rem;
+}
+.searchAndSort {
+  margin: 0 10% 1% 10%;
+  padding: 0;
+  font-size: 1.2rem;
+}
+.sortField {
+  width: 100%;
+}
+select {
+  font-size: 1.2rem;
+  padding: 1%;
+  margin-left: 1%;
+}
+
+.removeBtn {
+  background-color: white;
+  border: none;
+  font-size: 1.5rem;
+  color: rgb(252, 12, 12);
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 1% 10%;
+  font-size: 1.3rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  #tbl {
+    width: 100%;
+  }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 400px) {
+  .book-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 0 5%;
+  }
+  .book-card {
+    padding: 10px;
+    gap: 5px;
+  }
+  .book-cover {
+    height: 180px;
+    width: 50%;
+  }
+  #homePage {
+    font-size: 12px;
+  }
+  #navbar {
+    padding: 10px 15px;
+
+  }
+  .title {
+    flex-basis: 70%;
+    font-size: 14px;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .title-icon {
+    font-size: 20px;
+  }
+
+  .nav-item-container {
+    margin: 0;
+    gap: 10%;
+    flex-basis: 30%;
+  }
+  .nav-item {
+    font-size: 14px;
+  }
+
+  #banner-container {
+    margin: 2% 2%;
+    height: 200px;
+    position: relative;
+  }
+  #banner-container img {
+    height: 200px;
+  }
+  #banner-text {
+    position: absolute;
+    left: 60%;
+    top: 80px;
+    color: white;
+  }
+  #banner-text h2 {
+    font-size: 14px;
+  }
+
+  #banner-text h4 {
+    font-size: 10px;
+    padding-top: 5px;
+  }
+
+  #pageTitle {
+    font-size: 1.3rem;
+  }
+  .searchField {
+    width: 20%;
+  }
+  .wish-search-field{
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .searchField input {
+    padding: 4px;
+    width: 100px;
+  }
+  .rowsPerPage {
+    padding: 4px;
+    width: 50px;
+  }
+  select {
+    font-size: 12px;
+  }
+  .searchAndSort, .searchAndPaginationSort {
+    font-size: 14px;
+  }
+  .searchAndPaginationSort {
+    /* flex-direction: column; */
+    justify-content: space-between;
+    gap: 5%;
+    width: 100%;
+    align-items: baseline;
+    margin-bottom: 5px;
+  }
+  .book-card h3 {
+    font-size: 16px;
+    margin: 5% 0;
+  }
+  .button {
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+
+  .pagination-container-home {
+    flex-direction: column-reverse;
+    font-size: 12px;
+  }
+
+  .paginationSort {
+    width: 100%;
+    justify-content: center;
+    margin-top: 2%;
+    font-size: 12px;
+    flex-basis: 100%;
+  }
+
+  .page-btn {
+    font-size: 12px;
+  }
+  .nav-item.active {
+    padding: 2% 3%;
+    border-radius: 5px;
+  }
+
+  #tblContainer {
+    padding: 10px;
+  }
+
+  #tbl {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 3px;
+    font-size: 12px;
+  }
+
+  .tbl-title {
+    min-width: 150px;
+  }
+
+  .removeBtn {
+    font-size: 1rem;
+  }
+  .page-info {
+    font-size: 12px;
+  }
+  .pagination {
+    margin-top: 10px;
+  }
+  .spinner-text{
+    font-size: 14px;
+  }
+  
 }

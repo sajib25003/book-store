@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div>
-      <h2 className='title'>Hellow World</h2>
+      <h2 className='title'>Hello World</h2>
     </div>
   )
 }

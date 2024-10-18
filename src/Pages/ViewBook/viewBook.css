@@ -1,0 +1,58 @@
+.view-book-card{
+    margin: 2% 30%;
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img{
+    width: 300px;
+    height: 450px;
+}
+
+.button-container{
+    display: flex;
+    gap: 3%;
+    margin-top: 2%;
+}
+
+.button-container .button{
+    font-size: 1.5rem;
+}
+
+.addToWishlist{
+    color: White;
+    background-color: black;
+}
+.addedToWishlist{
+    color: rgb(0, 255, 110);
+    background-color: black;
+}
+
+.add-wishlist:hover{
+    cursor: pointer;
+    transform: scale(2);
+}
+
+.removeFromWishlist{
+    color: red;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 400px) {
+    .button-container .button {
+        font-size: 12px;
+      }
+      .view-book-card{
+        margin: 2% 5%;
+    }
+    .img-container img{
+        width: 150px;
+        height: 200px;
+    }
+    .card-body p{
+        font-size: 12px;
+    }
+}

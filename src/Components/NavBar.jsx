@@ -11,7 +11,7 @@ const NavBar = () => {
           Home
         </NavLink>
         <NavLink className={"nav-item"} to={"/wishList"}>
-          Wished List
+          Wishlist
         </NavLink>
       </div>
     </div>
