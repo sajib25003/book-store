@@ -12,7 +12,7 @@ const WishList = () => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const rowOptions = [5, 10, 20, 50, 100];
   const wishedBooks = [];
-  const wishlistIdArray = JSON.parse(localStorage.getItem("wishedBook"));
+  const wishlistIdArray = JSON.parse(localStorage.getItem("wishedBook")) || [];
   const wishlistIds = wishlistIdArray.map((id) => Number(id));
   // console.log('wished Book Ids = ', wishlistIds);
   if (books) {
@@ -55,20 +55,21 @@ const WishList = () => {
     localStorage.setItem("wishedBook", JSON.stringify(updatedWishlist));
 
     setCurrentPage(1);
-    toast.error('Removed from wishlist!', {
-        position: "top-right",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Bounce,
-        });
-        setTimeout(() => {
-            window.location.reload();
-          }, 1000);
+    toast.error("Removed from wishlist!", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   };
 
   if (loading) {
@@ -121,12 +122,18 @@ const WishList = () => {
                 <td>{index + 1}</td>
                 <td>{book?.id}</td>
                 <td className="tbl-title">{book?.title}</td>
-                <td className="tbl-title">{book?.authors?.[0]?.name || "N/A"}</td>
+                <td className="tbl-title">
+                  {book?.authors?.[0]?.name || "N/A"}
+                </td>
                 <td>{book?.download_count || 0}</td>
                 <td>
-                  <button className="removeBtn" onClick={() => removeFromWishlist(book.id)} data-tooltip-id="my-tooltip"
-            data-tooltip-content="Remove from Wishlist"
-            data-tooltip-place="bottom">
+                  <button
+                    className="removeBtn"
+                    onClick={() => removeFromWishlist(book.id)}
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content="Remove from Wishlist"
+                    data-tooltip-place="bottom"
+                  >
                     <RiDeleteBack2Fill></RiDeleteBack2Fill>
                   </button>
                 </td>
