@@ -6,7 +6,7 @@ import "./viewBook.css";
 import { FaHeart } from "react-icons/fa6";
 import { Tooltip } from "react-tooltip";
 import { Bounce, toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const ViewBook = () => {
   const { id } = useParams();
@@ -16,7 +16,7 @@ const ViewBook = () => {
 
   const getWishlist = () => {
     const wishlist = localStorage.getItem("wishedBook");
-    return JSON.parse(wishlist).map(Number); 
+    return wishlist ? JSON.parse(wishlist).map(Number) : [];
   };
 
   const addToWishlist = () => {
@@ -27,7 +27,7 @@ const ViewBook = () => {
       wishlist.push(bookId);
       localStorage.setItem("wishedBook", JSON.stringify(wishlist));
       setIsInWishlist(true);
-      toast.success('Added to Wishlist!', {
+      toast.success("Added to Wishlist!", {
         position: "top-right",
         autoClose: 1000,
         hideProgressBar: false,
@@ -51,7 +51,7 @@ const ViewBook = () => {
   useEffect(() => {
     const checkIfBookInWishlist = () => {
       const wishlist = getWishlist();
-      const bookId = Number(id); 
+      const bookId = Number(id);
       if (wishlist.includes(bookId)) {
         setIsInWishlist(true);
       }

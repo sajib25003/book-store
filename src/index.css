@@ -280,6 +280,7 @@ th {
 .rowsPerPage {
   padding: 1%;
   width: 10%;
+  min-width: 60px;
 }
 
 .pagination-container-home,
@@ -325,7 +326,7 @@ select {
 }
 
 /* Mobile Responsiveness */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 640px) {
   .book-container {
     display: grid;
     grid-template-columns: 1fr;

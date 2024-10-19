@@ -41,7 +41,7 @@
     background-color: transparent;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 640px) {
     .button-container .button {
         font-size: 12px;
       }
