@@ -14,10 +14,10 @@ const Spinner = () => {
     };
   }, []);
 
-  const spinnerSize = screenWidth < 400 ? 100 : 200;
+  const spinnerSize = screenWidth < 640 ? 100 : 200;
 
   return (
-    <div className="spinner-container">
+      <div className="spinner-container">
       <TailSpin
         visible={true}
         height={spinnerSize}

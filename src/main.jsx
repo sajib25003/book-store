@@ -9,11 +9,13 @@ import Main from './Main/Main.jsx';
 import Home from './Pages/Home/Home.jsx';
 import WishList from './Pages/WishList/WishList.jsx';
 import ViewBook from './Pages/ViewBook/ViewBook.jsx';
+import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children:[
       {
         path: "/",

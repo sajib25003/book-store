@@ -71,17 +71,31 @@ const Home = () => {
 
   useEffect(() => {
     setWishlist(getWishlist());
+    const lastSort = localStorage.getItem("lastSort");
+    if (lastSort) {
+      setSortOption(lastSort);
+    }
+    const lastSearch = localStorage.getItem("lastSearch");
+  if (lastSearch) {
+    setSearchQuery(lastSearch);
+  }
   }, []);
 
   const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
+    const newSearchQuery = event.target.value;
+    setSearchQuery(newSearchQuery);
     setCurrentPage(1);
+    localStorage.setItem("lastSearch", newSearchQuery);
   };
 
   const handleSortChange = (event) => {
-    setSortOption(event.target.value);
+    const selectedSortOption = event.target.value;
+    setSortOption(selectedSortOption);
     setCurrentPage(1);
+    localStorage.setItem("lastSort", selectedSortOption);
   };
+
+
 
   const handleRowsPerPageChange = (event) => {
     setRowsPerPage(Number(event.target.value));

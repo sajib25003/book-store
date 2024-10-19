@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Spinner from "../../Components/Spinner";
 import useBooks from "../../hook/useBooks";
 import { Bounce, toast, ToastContainer } from "react-toastify";
@@ -27,9 +27,17 @@ const WishList = () => {
   );
 
   const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
+    const newSearchQuery = event.target.value;
+    setSearchQuery(newSearchQuery);
     setCurrentPage(1);
+    localStorage.setItem("wishlistLastSearch", newSearchQuery);
   };
+  useEffect(() => {
+    const lastSearch = localStorage.getItem("wishlistLastSearch");
+    if (lastSearch) {
+      setSearchQuery(lastSearch);
+    }
+  }, []);
 
   const handleRowsPerPageChange = (event) => {
     setRowsPerPage(Number(event.target.value));
